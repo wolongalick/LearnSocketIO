@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <RadioGroup
+            android:id="@+id/rgServerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbLocalServer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本地服务器" />
+
+            <RadioButton
+                android:id="@+id/rbRemoteServer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="远程服务器" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="连接"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rgServerType" />
+
+        <Button
+            android:id="@+id/btnDisconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="断开连接"
+            app:layout_constraintStart_toEndOf="@id/btnConnect"
+            app:layout_constraintTop_toBottomOf="@id/rgServerType"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/tvDisconnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnConnect"
+            app:layout_constraintBottom_toBottomOf="@id/btnConnect"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="12sp"
+            android:textColor="#ff0000"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDisconnect" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:text="发送"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etMessage"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/tvReceiveMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSend" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
